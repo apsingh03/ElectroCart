@@ -14,9 +14,9 @@ const SideBarMenu = ({ setisActiveSideBarMenu }) => {
 
   const [isSubMenuToggle, setisSubMenuToggle] = useState({});
 
-   const client_headerMenuRedux = useSelector(
-     (state) => state.client_product.headerMenu
-   );
+  const client_headerMenuRedux = useSelector(
+    (state) => state.client_product.headerMenu
+  );
   // console.log("admin_parentMenuRedux - ", admin_parentMenuRedux);
 
   const { setisLoadingTopProgress } = useContext(AppContext);
@@ -64,9 +64,13 @@ const SideBarMenu = ({ setisActiveSideBarMenu }) => {
                   >
                     <div className="sideMenu__body__card__parent ">
                       <div>
-                        <span className="sideMenu__body__card__parent__catName">
+                        <Link
+                          className="sideMenu__body__card__parent__catName text-decoration-none"
+                          to={menuData?.routeLink}
+                          target="_blank"
+                        >
                           {menuData.name && menuData.name}
-                        </span>
+                        </Link>
                       </div>
 
                       <div>
@@ -94,7 +98,9 @@ const SideBarMenu = ({ setisActiveSideBarMenu }) => {
                               key={subMenuIdx}
                               className="sideMenu__body__child__card"
                             >
-                              <Link to="#">{subMenu.name && subMenu.name}</Link>
+                              <Link target="_blank" to={subMenu?.routeLink}>
+                                {subMenu.name && subMenu.name}
+                              </Link>
                             </div>
                           );
                         })}

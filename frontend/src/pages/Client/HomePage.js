@@ -173,18 +173,19 @@ const HomePage = () => {
             <CategorySection
               title="Latest Mobiles"
               products={client_allProductsRedux__mobiles}
-              categoryRelatedImage="/images/mobileBanner.jpg"
+              categoryRelatedImage="/images/mobileBanner.webp"
               categoryRelatedImageWidth="100%"
-              categoryRelatedImageheight="auto"
+              categoryRelatedImageheight="500px"
               categoryRelatedImageObjectFit="cover"
               categoryRelatedImageAlt="Tablet Banner"
             />
-
+            {/* "../../../public/images/laptopBanner.webp"
+            "../../../public/images/mobileBanner.webp" */}
             <CategorySection
               title="Latest Tablet"
               products={client_allProductsRedux__tablet}
               parentBgColor="#fff"
-              categoryRelatedImage="https://cdn.mos.cms.futurecdn.net/qyURdgtrL98nNyim2u8D3A-1200-80.jpeg"
+              categoryRelatedImage="/images/laptopBanner.webp"
               categoryRelatedImageWidth="100%"
               categoryRelatedImageheight="500px"
               categoryRelatedImageObjectFit="cover"

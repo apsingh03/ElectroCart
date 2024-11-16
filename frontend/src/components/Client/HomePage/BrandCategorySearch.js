@@ -12,55 +12,47 @@ import {
   HiDeviceTablet,
   HiOutlineTv,
 } from "react-icons/hi2";
-
+// "images/brand/apple.png"
 const brands = [
   {
     name: "Apple",
-    logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/df15cd27-8f07-4ef3-bbe6-9ff439605ea4.png",
+
+    logo: "images/brand/apple.png",
   },
   {
     name: "Samsung",
-    logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/5a6154b9-5ede-4bcc-9d70-cff742303cbc.png",
+    logo: "images/brand/samsung.png",
   },
-  {
-    name: "OnePlus",
-    logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/46889902-c66c-435d-a560-53dc99d7e2d2.png",
-  },
+
   {
     name: "Xiaomi",
-    logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/a5efad32-ca71-43e0-8f59-e11ef89f9c2f.png",
+    logo: "images/brand/readme.png",
   },
   {
     name: "Lenovo",
-    logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/57491562-4472-4b9e-9e7e-0af7931b4e44.png",
+    logo: "images/brand/lenovo.png",
   },
   {
     name: "LG",
-    logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/8264660e-8abd-418b-a374-9b4609d75f7c.png",
+    logo: "images/brand/lg.png",
   },
-  //   {
-  //     name: "HP",
-  //     logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/cf3995f7-995d-42e1-9244-960d600ea72e.png",
-  //   },
+
   {
     name: "Vivo",
-    logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/319f6f9b-984d-4531-b14e-14871722a497.png",
+    logo: "images/brand/vivo.png",
   },
-  //   {
-  //     name: "Dell",
-  //     logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/15c21429-5c5d-4b9b-b1a7-adb28a346ba2.png",
-  //   },
-  //   {
-  //     name: "Philips",
-  //     logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/72e40f03-b89b-47f6-ab1c-78666a27eb33.png",
-  //   },
+
   {
-    name: "Oppo",
-    logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/a68cfc8c-9a38-46bd-9bb3-bd0616a3beb8.png",
+    name: "Dell",
+    logo: "images/brand/dell.png",
   },
   {
     name: "Nokia",
-    logo: "https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/d1d185a5-9126-4bbf-b720-7005393b1fe4.png",
+    logo: "images/brand/nokia.png",
+  },
+  {
+    name: "Philips",
+    logo: "images/brand/philips.png",
   },
 ];
 
@@ -126,11 +118,12 @@ const BrandCategorySearch = () => {
                     src={brand.logo}
                     alt={brand.name}
                     style={{
-                      maxWidth: "100%",
-                      maxHeight: "100%",
+                      width: "50px",
+                      height: "50px",
                       objectFit: "contain",
                       backgroundColor: "#ffff",
                     }}
+                    loading="lazy"
                   />
                 </div>
               ))}

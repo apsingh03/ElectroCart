@@ -2,7 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles/Client/Client.css";
+// import "./styles/Client/Client.css";
+import "./styles/Client/ClientMinified.css";
 // // Swiper
 import "swiper/css";
 import "swiper/css/navigation";
@@ -19,8 +20,6 @@ import { AppProvider } from "./context/AppContext";
 import { store } from "./Redux/Store";
 import { Provider } from "react-redux";
 import { SocketProvider } from "./context/SocketContext";
-
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

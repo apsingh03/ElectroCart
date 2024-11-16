@@ -14,7 +14,7 @@ body {
   --brand-color: #9e2d2c;
   --white: #fff;
   --black1: #29282b;
-  --blackColor__whiteBg: #4a1425
+  --blackColor__whiteBg: #4a1425;
 }
 
 .text-two-lines {
@@ -51,7 +51,7 @@ body {
   padding: 15px 30px;
   background-color: var(--brand-color);
   font-family: "Lato", "Roboto Slab";
-  font-display: swap
+  font-display: swap;
 }
 
 .header__searchHamburgerIcon {
@@ -68,9 +68,7 @@ body {
   border-radius: 10px;
   width: 30px;
   height: 30px;
-
 }
-
 
 .header__searchIcon {
   display: none;
@@ -86,8 +84,8 @@ body {
   font-weight: 800;
   text-decoration: none;
   color: #fff;
-  font-family: 'Lato', sans-serif;
-  font-display: swap
+  font-family: "Lato", sans-serif;
+  font-display: swap;
 }
 
 /* SUB HEADER  */
@@ -667,10 +665,11 @@ body {
 }
 
 .dealsSection__item__left__image {
-  width: 100%;
-  height: auto;
+  width: 80px;
+  height: 80px;
   background-color: #eaeaea;
-  mix-blend-mode: multiply;
+  mix-blend-mode: darken;
+  object-fit: contain;
 }
 
 .dealsSection__item__right {
@@ -2088,7 +2087,6 @@ body {
   cursor: pointer;
   /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); */
   border-radius: 10px;
-
 }
 
 .productDetail__right__5thSizes__card {
@@ -2099,13 +2097,11 @@ body {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   transition: box-shadow 1s ease;
-
 }
 
 .productDetail__right__5thSizes__card:hover {
   border-color: #a8a1a1;
   box-shadow: none;
-
 }
 
 .productDetail__right__5thSizes__card.selected {
@@ -2137,7 +2133,6 @@ body {
 
 .productDetail__right__6thcheckoutBtns__cartBtn:hover {
   background-color: #ffd814;
-
 }
 
 .productDetail__right__6thcheckoutBtns__buyNowBtn {
@@ -2219,7 +2214,6 @@ body {
   position: relative;
   cursor: text;
 }
-
 
 .description-container {
   max-width: 100%;
@@ -2306,9 +2300,7 @@ body {
 .description-container>div {
   border-bottom: 1px solid #ddd;
   padding: 10px;
-
 }
-
 
 /* MOBILE MODE SIDE BAR MENU */
 
@@ -3048,7 +3040,6 @@ body {
     width: 70px !important;
     height: 90px !important;
   }
-
 }
 
 /* lg */
@@ -3234,8 +3225,6 @@ body {
     width: 90px !important;
     height: 90px !important;
   }
-
-
 }
 
 /* sm */
@@ -3326,7 +3315,6 @@ body {
     height: 60px;
   }
 
-
   .header__1stContainer__logo {
     font-size: 20px;
   }
@@ -3342,7 +3330,6 @@ body {
     height: 30px;
   }
 
-
   .header__4thContainer__heartIcon svg,
   .header__4thContainer__userIcon svg,
   .header__4thContainer__cartIcon svg {
@@ -3350,7 +3337,6 @@ body {
       height: 30px; */
     font-size: 14px;
   }
-
 
   .product-details .leftSection .imageBox {
     width: 70px !important;
@@ -3362,7 +3348,6 @@ body {
   }
 
   .productDetail__left {
-
     max-height: 70vh;
     overflow: hidden;
   }
@@ -3382,5 +3367,4 @@ body {
     left: 25px;
     font-size: 8px;
   }
-
 }
