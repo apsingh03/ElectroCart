@@ -1,0 +1,433 @@
+.admin {
+  /* background-color: red; */
+}
+
+.admin__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px 20px 0;
+  background-color: #212529;
+  color: #fff;
+}
+
+.admin__header__1st {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+  width: 23%;
+  padding: 0 0px 0 20px;
+}
+
+.admin__header__1st__brandName a {
+  font-size: 25px;
+  text-decoration: none;
+  color: #ffff;
+}
+
+.admin__header svg {
+  color: #fff;
+  font-size: 30px;
+}
+
+.admin__header__hamburgerIcon {
+  cursor: pointer;
+}
+
+.admin__header__menu__container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.admin__header__menu {
+  position: relative;
+}
+
+.admin__header__menu__title {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.admin__header__menu__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.admin__header__menu__title:hover::after {
+  width: 90%;
+}
+
+/* admin__header__menu__title-= */
+
+.admin__header__menu__children {
+  display: none;
+  position: absolute;
+  top: 100%;
+  min-width: 100px;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.admin__header__menu:hover .admin__header__menu__children {
+  display: block;
+}
+
+.admin__header__menu__children__title {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.admin__header__menu__children__title:hover {
+  background-color: #29282b;
+  color: #fff;
+}
+
+.admin__belowSide {
+  display: flex;
+  flex-direction: row;
+}
+
+.admin__belowSide__leftSide {
+  background-color: #212529;
+  padding: 10px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: stretch; */
+  /* justify-content: center; */
+  /* padding-top: 100px; */
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.admin__belowSide__rightSide {
+  padding: 10px 20px;
+  background-color: #ddd;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.admin__belowSide__leftSide.hideIt {
+  display: none;
+}
+
+.admin__belowSide__leftSide.showIt {
+  display: block;
+}
+
+.admin__belowSide__leftSide__brandName {
+  font-size: 20px;
+  font-weight: 600;
+  color: #595c5f;
+}
+
+.admin__belowSide__leftSide__wrapper {
+  /* margin: 100px 0; */
+}
+
+.admin__belowSide__leftSide__wrapper__card {
+  margin-bottom: 10px;
+}
+
+.admin__belowSide__leftSide__wrapper__card__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #595c5f;
+  user-select: none;
+}
+
+.admin__belowSide__leftSide__wrapper__card__nav__1st {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.admin__belowSide__leftSide__wrapper__card__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px;
+  color: #595c5f;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.admin__belowSide__leftSide__wrapper__card__nav span,
+.admin__belowSide__leftSide__wrapper__card__nav p,
+.admin__belowSide__leftSide__wrapper__card__nav svg {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.admin__belowSide__leftSide__wrapper__card__nav:hover span,
+.admin__belowSide__leftSide__wrapper__card__nav:hover p,
+.admin__belowSide__leftSide__wrapper__card__nav:hover svg {
+  color: white;
+}
+
+.admin__belowSide__leftSide__wrapper__card__nav svg {
+  font-size: 18px;
+  color: #595c5f;
+}
+
+.admin__belowSide__leftSide__wrapper__card__child {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: -10px;
+  padding: 0 0 0 51px;
+  display: none;
+  margin-bottom: 20px;
+}
+
+.admin__belowSide__leftSide__wrapper__card__child>div {
+  margin-bottom: 10px;
+}
+
+.admin__belowSide__leftSide__wrapper__card__child.active {
+  display: block;
+}
+
+.admin__belowSide__leftSide__wrapper__card__child a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #595c5f;
+}
+
+.admin__belowSide__leftSide__wrapper__card__child>a {
+  margin-bottom: 10px;
+}
+
+.admin__belowSide__leftSide__wrapper__card__child a:hover {
+  color: #fff;
+  cursor: pointer;
+  /* text-decoration: underline; */
+  transition: color 0.3s ease;
+}
+
+/* BODY */
+
+#adminRightSideWrapper {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  /* height: 100%; */
+  -webkit-box-shadow: 0px 19px 14px -10px rgba(176, 169, 176, 1);
+  -moz-box-shadow: 0px 19px 14px -10px rgba(176, 169, 176, 1);
+  box-shadow: 0px 19px 14px -10px rgba(176, 169, 176, 1);
+}
+
+.addProduct_card {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* LISTED PRODUCTS  */
+
+.listedProducts {}
+
+.listedProducts__2nd__toggle__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #212529;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #ddd;
+}
+
+.listedProducts__2nd__toggle__title:hover {
+  background-color: #c3bbbb;
+  text-decoration: underline;
+}
+
+.listedProducts__2nd__toggle__child {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: height 1s ease, opacity 1s ease;
+}
+
+.listedProducts__2nd__toggle__child.active {
+  height: auto;
+  opacity: 1;
+  padding: 10px;
+}
+
+.listedProducts__2nd__actions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  vertical-align: center;
+}
+
+.listedProducts__2nd__actions__btn {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.listedProducts__2nd__actions__btn:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.listedProducts__2nd__colors {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.listedProducts__2nd__colors__title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #212529;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.listedProducts__2nd__colors__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.listedProducts__2nd__colors__wrapper__color {
+  /* width: 20px;
+  height: 20px; */
+
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  padding: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.listedProducts__2nd__sizes {
+  display: flex;
+  flex-direction: row;
+  gap: 59px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.listedProducts__2nd__sizes__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.listedProducts__2nd__sizes__wrapper__size {
+  padding: 5px;
+  /* border: 1px solid rgb(22, 21, 21); */
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.listedProducts__2nd__sizes__wrapper__size__text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+}
+
+.listedProducts__2nd__fabric {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.listedProducts__2nd__fabric__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.listedProducts__2nd__fabric__wrapper__fabric {}
+
+.listedProducts__2nd__fabric__wrapper__fabric__text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+}
+
+
+
+/* 
+---------------------------- RESPONSIVE BREAKPOINTS 
+*/
+
+/* xl Red */
+@media only screen and (max-width: 1200px) {}
+
+/* lg  Green */
+@media only screen and (max-width: 992px) {}
+
+/* md Blue */
+@media only screen and (max-width: 768px) {
+
+  .admin__header {
+    padding: 20px 10px 20px 0;
+  }
+
+  .admin__header__1st {
+    width: 30%;
+  }
+
+  .admin__header__menu__container {
+    gap: 0px;
+  }
+
+  .admin__header__1st__brandName a {
+    font-size: 20px;
+  }
+
+  .admin__belowSide {
+    display: block;
+  }
+
+  .admin__belowSide__leftSide {
+    width: 100%;
+  }
+
+  .admin__belowSide__rightSide {
+    padding: 10px;
+  }
+}
+
+
+/* sm  Yellow*/
+@media only screen and (max-width: 576px) {}

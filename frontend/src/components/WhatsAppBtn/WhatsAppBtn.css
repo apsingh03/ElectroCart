@@ -1,0 +1,263 @@
+/* WhatsappWidget */
+
+.chatWidget__whatsappIcon {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    /* justify-content: center; */
+    cursor: pointer;
+}
+
+.chatWidget__whatsappIcon__icon {
+    /* box-shadow: 0px 0px 10px #202020; */
+}
+
+.chatWidget__whatsappIcon__title {
+    padding: 10px;
+    background-color: #fff;
+    font-size: 10px;
+    color: #202020;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #dddd;
+    user-select: none;
+}
+
+.chatWidget {
+    display: none;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    right: 10px;
+    bottom: 80px;
+    z-index: 1000;
+    background-color: #fff;
+    /* padding: 10px; */
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px #837e7e;
+}
+
+.chatWidget.active {
+    display: block;
+}
+
+.chatWidgetPopUp {
+    display: block;
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.chatWidget .header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    background-color: #2DB742;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.chatWidget .header .header__left {
+    /* text-align: center; */
+    align-self: flex-start;
+}
+
+.chatWidget .header .header__right h3 {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #fff
+}
+
+.chatWidget .header .header__right p {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #fff;
+}
+
+.chatWidget .header span {
+    font-weight: bold;
+}
+
+/* Chat Widget Custom Scrollbar */
+.chatWidget .teamStatus {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 270px;
+    padding: 10px 20px;
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #2DB742 #f0f0f0;
+    /* Scrollbar thumb and track color for Firefox */
+}
+
+/* WebKit Browsers (Chrome, Safari, Edge) */
+.chatWidget .teamStatus::-webkit-scrollbar {
+    width: 5px;
+    /* Width of the scrollbar */
+}
+
+.chatWidget .teamStatus::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    /* Scrollbar track color */
+    border-radius: 10px;
+    /* Make the track rounded */
+}
+
+.chatWidget .teamStatus::-webkit-scrollbar-thumb {
+    background-color: #2DB742;
+    /* Scrollbar thumb color (e.g., WhatsApp green) */
+    border-radius: 10px;
+    /* Make the thumb rounded */
+    border: 2px solid #ffffff;
+    /* Adds a border to the thumb for a more styled look */
+}
+
+.chatWidget .teamStatus::-webkit-scrollbar-thumb:hover {
+    background-color: #2DB742;
+    /* Darker green on hover for the thumb */
+}
+
+.chatWidget .teamStatus::-webkit-scrollbar-corner {
+    background-color: transparent;
+    /* The bottom corner where both scrollbars meet */
+}
+
+/* Scrollbar in Firefox */
+.chatWidget .teamStatus {
+    scrollbar-width: thin;
+    /* Makes the scrollbar thinner in Firefox */
+    scrollbar-color: #2DB742 #f0f0f0;
+    /* Thumb color, Track color */
+}
+
+.chatWidget .teamStatus .teamStatus__teamStatus {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #202020;
+}
+
+.chatWidget .teamMember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    border-left: 5px solid #2DB742;
+    cursor: pointer;
+    transition: border 0.4s ease-in-out;
+}
+
+.chatWidget .teamMember:hover {
+    border-top: 2px solid #2DB742;
+    border-bottom: 2px solid #2DB742;
+    border-right: 2px solid #2DB742;
+}
+
+.chatWidget .teamMember .avatarImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.chatWidget .details {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.chatWidget .details h4 {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+}
+
+.chatWidget .details p {
+    margin: 0;
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: #202020;
+}
+
+.chatWidget .details .status {
+    color: orange;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.chatWidget .whatsapp-icon {
+    width: 20px;
+    height: 20px;
+    /* background-image: url('/images/whatsapp-icon.png'); */
+    /* background-image: url('../../components/WhatsAppBtn/whatsappImage.png'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.chatWidget .whatsapp-icon.disabled {
+    filter: grayscale(100%);
+    pointer-events: none;
+}
+
+.typeMessageToAgent {
+    padding: 10px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.typeMessageToAgent__inpContainer {
+    position: relative;
+}
+
+.typeMessageToAgent__inpContainer input {
+    border: 2px solid #dddd;
+    transition: border 0.1s ease-in-out;
+    padding-right: 70px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #202020;
+
+}
+
+.typeMessageToAgent__title {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #202020;
+}
+
+.typeMessageToAgent__inpContainer input:focus {
+    border: 2px solid #2DB742 !important;
+    box-shadow: none;
+}
+
+.typeMessageToAgent__inpContainer button {
+    position: absolute;
+    right: 5px;
+    top: 10%;
+    background-color: #2DB742;
+    color: #fff;
+
+}
+
+.typeMessageToAgent__inpContainer button:hover {
+    background-color: #2DB742;
+    color: #fff;
+}

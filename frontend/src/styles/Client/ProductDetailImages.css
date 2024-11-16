@@ -1,0 +1,117 @@
+.product-details {
+  background: #fff;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 0.26fr 1fr;
+  border: 1px solid #ddd;
+}
+
+.product-details .leftSection {
+  height: 465px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.product-details .leftSection .imageBox {
+  width: 90px;
+  height: 93px;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  padding: 2px;
+  opacity: 0.6;
+}
+
+.product-details .leftSection .imageBox:hover {
+  border: 2px solid teal;
+  opacity: 1;
+}
+
+.product-details .leftSection .imageBox.active {
+  border: 2px solid black;
+  opacity: 1;
+}
+
+.product-details .leftSection .imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-details .rightSection {
+  /* background-color: gray; */
+  width: 100%;
+}
+
+.product-details .rightSection .ShoppingActionBtns {
+  width: 100%;
+  text-align: center;
+}
+
+.product-details .rightSection .ShoppingActionBtns>button {
+  width: 48%;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.rightSection .product-page-img {
+  width: 100%;
+  height: 465px;
+  /* border: 1px solid #eee; */
+  margin-right: 30px;
+  /* padding: 5px; */
+  overflow: hidden;
+  position: relative;
+}
+
+.mySlides {
+  width: 100%;
+  /* height: 100%; */
+  position: relative;
+  /* display: none; */
+}
+
+.mySlides .numbertext {
+  color: #000;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: 600;
+  background-color: #fff;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  object-fit: cover;
+}
+
+.rightSection .product-page-img .prev,
+.rightSection .product-page-img .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 0 15px;
+  /* margin-top: -50px; */
+  color: #000;
+  font-weight: bold;
+  font-size: 30px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.rightSection .product-page-img .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.rightSection .product-page-img .prev:hover,
+.rightSection .product-page-img .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
