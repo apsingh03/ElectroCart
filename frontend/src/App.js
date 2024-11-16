@@ -8,7 +8,7 @@ import Cart from "./components/Client/Cart";
 import SideBarMenu from "./components/Client/SideBarMenu";
 import SideFilter from "./components/Client/ProductsFilterPage/SideFilter";
 
-// Lazy load components
+// Lazy load components jhjkhkjkk
 const ProductFilterPage = lazy(() =>
   import("./pages/Client/ProductFilterPage")
 );
