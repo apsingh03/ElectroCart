@@ -37,9 +37,9 @@ const Cart = ({ setcartIsHover }) => {
 
   const userCartItems = user_userCart?.query?.[0]?.userCartUserCartItem || [];
 
-  const isLoadingUserCartItems = !user_userCart?.query || !user_userCart?.query;
-
-  console.log("isLoadingUserCartItems - ", isLoadingUserCartItems);
+  const isLoadingUserCartItems = useSelector(
+    (state) => state.user_userCart?.isLoading
+  );
 
   const { setisLoadingTopProgress } = useContext(AppContext);
   let calculateTotalCartMrp = 0;
@@ -308,16 +308,16 @@ const Cart = ({ setcartIsHover }) => {
               );
             } else {
               return (
-                <h6 className="text-center p-3">
+                <>
                   {isLoadingUserCartItems ? (
-                    <div className="cart__body__card">
+                    <div className="d-flex  flex-row gap-3" id="cartSkelton">
                       <div>
-                        <Skeleton height={150} width={110} />
+                        <Skeleton className="productImage" />
                       </div>
 
-                      <div className="cart__body__card__product">
+                      <div>
                         <div className="mb-2">
-                          <Skeleton count={3} width={350} />
+                          <Skeleton count={3} className="productName" />
                         </div>
 
                         <div className="d-flex flex-row justify-content-between">
@@ -327,45 +327,35 @@ const Cart = ({ setcartIsHover }) => {
                           </div>
                           <div className="  d-flex flex-row gap-1">
                             <Skeleton width={50} />
-
                             <Skeleton width={50} />
                           </div>
                         </div>
 
-                        <div
-                          className=""
-                          style={{ textAlign: "start", margin: "10px 0" }}
-                        >
+                        <div style={{ textAlign: "start", margin: "10px 0" }}>
                           <Skeleton width={80} />
                         </div>
 
                         <div className="cart__body__card__product__btns">
-                          <div className="cart__body__card__product__btns_qtyGrp">
-                            <div
-                              className={`cart__body__card__product__btns_qtyGrp__icon  `}
-                            >
+                          <div className="d-flex flex-row gap-2 align-items-center p-1 border">
+                            <div>
                               <Skeleton width={20} height={20} />
                             </div>
-                            <p className="cart__body__card__product__btns_qtyGrp__qty">
+                            <div>
                               <Skeleton width={20} />
-                            </p>
-                            <div
-                              className={`cart__body__card__product__btns_qtyGrp__icon `}
-                            >
+                            </div>
+                            <div>
                               <Skeleton width={20} height={20} />
                             </div>
                           </div>
 
-                          <Link className="cart__body__card__product__btns__removeBtn">
-                            <Skeleton width={60} />
-                          </Link>
+                          <Skeleton width={60} />
                         </div>
                       </div>
                     </div>
                   ) : (
-                    "Cart is Empty"
+                    <p className="text-center">Cart is Empty</p>
                   )}
-                </h6>
+                </>
               );
             }
           } catch (error) {
@@ -380,7 +370,7 @@ const Cart = ({ setcartIsHover }) => {
           </div>
           <div className="cart__footer__summary__wrapper">
             <p className="cart__footer__summary__wrapper__couponCode">
-              SUMMER 20 is applied
+              {/* XX XXX is applied */}
             </p>
             <p className="cart__footer__summary__wrapper__discountPrice">
               {convertInInr(calculateTotalCartMrp)}

@@ -185,94 +185,101 @@ const Header = () => {
           </div>
 
           <div className="header__4thContainer">
-            {adminIsLogged ? (
-              <Link
-                className="header__4thContainer__userIcon"
-                title="Admin Panel"
-                to="/admin/"
-                aria-label="Admin Login"
-              >
-                <TbScreenShare />
-              </Link>
-            ) : (
-              <Link
-                className="header__4thContainer__userIcon"
-                title="Admin Auth"
-                to="/admin/auth"
-                aria-label="Admin Auth"
-              >
-                <MdOutlineAdminPanelSettings />
-              </Link>
-            )}
+            <div>
+              {adminIsLogged ? (
+                <Link
+                  className="header__4thContainer__userIcon"
+                  title="Admin Panel"
+                  to="/admin/"
+                  aria-label="Admin Login"
+                >
+                  <TbScreenShare />
+                </Link>
+              ) : (
+                <Link
+                  className="header__4thContainer__userIcon"
+                  title="Admin Auth"
+                  to="/admin/auth"
+                  aria-label="Admin Auth"
+                >
+                  <MdOutlineAdminPanelSettings />
+                </Link>
+              )}
+            </div>
+            <div>
+              {clientIsLogged.isUserLogged ? (
+                <Link
+                  className="header__4thContainer__userIcon"
+                  title="Wish List"
+                  to="/wishlist"
+                  style={{ position: "relative" }}
+                  aria-label="Wish List"
+                >
+                  <FaRegHeart />
+                  {clientIsLogged.isUserLogged ? (
+                    <span
+                      title="Qty"
+                      aria-label="Qty"
+                      className="header__4thContainer__cartIcon__badge"
+                    >
+                      {user_favoriteProductLength}
+                    </span>
+                  ) : null}
+                </Link>
+              ) : (
+                <Link
+                  className="header__4thContainer__userIcon"
+                  to="/signin"
+                  aria-label="Sign In"
+                  title="Sign In"
+                >
+                  <FaRegHeart />
+                </Link>
+              )}
+            </div>
 
-            {clientIsLogged.isUserLogged ? (
-              <Link
-                className="header__4thContainer__userIcon"
-                title="Wish List"
-                to="/wishlist"
+            <div>
+              {clientIsLogged?.isUserLogged ? (
+                <Link
+                  className="header__4thContainer__userIcon"
+                  to="/account"
+                  title={clientIsLogged?.email}
+                  aria-label="Account"
+                >
+                  <FaRegUser />
+                </Link>
+              ) : (
+                <Link
+                  className="header__4thContainer__userIcon"
+                  title="Sign In"
+                  to="/signin"
+                  aria-label="Sign In"
+                >
+                  <FaRegUser />
+                </Link>
+              )}
+            </div>
+
+            <div>
+              <button
+                className="header__4thContainer__cartIcon"
+                title="Cart"
+                onClick={() => onClickToggleCart()}
                 style={{ position: "relative" }}
-                aria-label="Wish List"
+                aria-label="Cart"
               >
-                <FaRegHeart />
+                <LiaShoppingBagSolid />
                 {clientIsLogged.isUserLogged ? (
                   <span
-                    title="Qty"
                     aria-label="Qty"
+                    title="Qty"
                     className="header__4thContainer__cartIcon__badge"
                   >
-                    {user_favoriteProductLength}
+                    {user_userCartLength}
                   </span>
                 ) : null}
-              </Link>
-            ) : (
-              <Link
-                className="header__4thContainer__userIcon"
-                to="/signin"
-                aria-label="Sign In"
-                title="Sign In"
-              >
-                <FaRegHeart />
-              </Link>
-            )}
-
-            {clientIsLogged?.isUserLogged ? (
-              <Link
-                className="header__4thContainer__userIcon"
-                to="/account"
-                title={clientIsLogged?.email}
-                aria-label="Account"
-              >
-                <FaRegUser />
-              </Link>
-            ) : (
-              <Link
-                className="header__4thContainer__userIcon"
-                title="Sign In"
-                to="/signin"
-                aria-label="Sign In"
-              >
-                <FaRegUser />
-              </Link>
-            )}
-
-            <button
-              className="header__4thContainer__cartIcon"
-              title="Cart"
-              onClick={() => onClickToggleCart()}
-              style={{ position: "relative" }}
-              aria-label="Cart"
-            >
-              <LiaShoppingBagSolid />
-              {clientIsLogged.isUserLogged ? (
-                <span
-                  aria-label="Qty"
-                  title="Qty"
-                  className="header__4thContainer__cartIcon__badge"
-                >
-                  {user_userCartLength}
-                </span>
-              ) : null}
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </header>

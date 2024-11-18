@@ -8,6 +8,7 @@ import Cart from "./components/Client/Cart";
 import SideBarMenu from "./components/Client/SideBarMenu";
 import SideFilter from "./components/Client/ProductsFilterPage/SideFilter";
 import IsLoadingApp from "./components/Client/IsLoadingApp/IsLoadingApp";
+import SideBarDebounceSearch from "./components/Client/SideBarDebounceSearch";
 
 // Lazy load components jhjkhkjkk
 const ProductFilterPage = lazy(() =>
@@ -24,9 +25,9 @@ const ProjectCaseStudy = lazy(() =>
 );
 const LogInPage = lazy(() => import("./pages/Client/LogInPage"));
 const SignUpPage = lazy(() => import("./pages/Client/SignUpPage"));
-const SideBarDebounceSearch = lazy(() =>
-  import("./components/Client/SideBarDebounceSearch")
-);
+// const SideBarDebounceSearch = lazy(() =>
+//   import("./components/Client/SideBarDebounceSearch")
+// );
 // const SideBarMenu = lazy(() => import("./components/Client/SideBarMenu"));
 const ClientDashboard = lazy(() => import("./pages/Client/ClientDashboard"));
 const SideBarAllFilters = lazy(() =>
@@ -86,7 +87,7 @@ function App() {
   return (
     <>
       <LoadingBar
-        color="red"
+        color="black"
         height={3}
         progress={isLoadingTopProgress}
         shadow={true}
@@ -107,6 +108,10 @@ function App() {
           setisActiveSideBarDebounce={setisActiveSideBarDebounce}
         />
       )}
+
+      {/* <SideBarDebounceSearch
+        setisActiveSideBarDebounce={setisActiveSideBarDebounce}
+      /> */}
 
       <Suspense fallback={<IsLoadingApp />}>
         <Routes>

@@ -137,6 +137,7 @@ const LogInPage = () => {
                   </div>
                 </div>
 
+               
                 <div className="form-group mb-3">
                   <div className="d-flex align-items-baseline justify-content-between">
                     <div className="d-flex align-items-baseline">
@@ -176,7 +177,7 @@ const LogInPage = () => {
                     />
                   </div>
                 </div>
-
+                {/*  dsafsad   */}
                 <button
                   type="submit"
                   className="authPage__submitBtn mt-3"

@@ -37,35 +37,37 @@ const DealsSection = () => {
   ];
 
   return (
-    <div className="row col-12 dealsSection">
-      {dataArray.map((data, idx) => {
-        return (
-          <div className="col-6 col-md-3 mb-3 mb-md-0" key={idx}>
-            <div className="dealsSection__item">
-              <div className="dealsSection__item__left">
-                <img
-                  src={data.imgLink}
-                  alt={data.imgAlt}
-                  className="dealsSection__item__left__image"
-                  loading="lazy"
-                />
-              </div>
+    <div className=" dealsSection">
+      <div className="col-12 row">
+        {dataArray.map((data, idx) => {
+          return (
+            <div className="col-6 col-md-3 mb-3 mb-md-0" key={idx}>
+              <div className="dealsSection__item">
+                <div className="dealsSection__item__left">
+                  <img
+                    src={data.imgLink}
+                    alt={data.imgAlt}
+                    className="dealsSection__item__left__image"
+                    loading="lazy"
+                  />
+                </div>
 
-              <div className="dealsSection__item__right">
-                <h3 className="dealsSection__item__right__title">
-                  {data.title}
-                </h3>
-                <Link
-                  to={data.routeLink}
-                  className="dealsSection__item__right__link"
-                >
-                  Shop Now <FaAngleRight size={15} color="#000" />
-                </Link>
+                <div className="dealsSection__item__right">
+                  <h3 className="dealsSection__item__right__title">
+                    {data.title}
+                  </h3>
+                  <Link
+                    to={data.routeLink}
+                    className="dealsSection__item__right__link"
+                  >
+                    Shop Now <FaAngleRight size={15} color="#000" />
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

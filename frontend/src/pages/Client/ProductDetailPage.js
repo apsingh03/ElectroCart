@@ -22,7 +22,7 @@ import {
   createUserCartAsync,
   // getUserCartAsync,
 } from "../../Redux/UserSlices/Cart/UserCartRedux";
-import Skeleton, {  } from "react-loading-skeleton";
+import Skeleton from "react-loading-skeleton";
 import ProductDetailSkelton from "../../components/Client/ProductDetailPage/ProductDetailSkelton";
 import ProductImages from "../../components/Client/ProductDetailPage/ProductImages";
 
@@ -38,7 +38,7 @@ const ProductDetailPage = () => {
     !clientSingleProductRedux?.query || !clientSingleProductRedux?.query;
 
   // const isLoadingClientSingleProductRedux = true;
-
+  // console.log("clientSingleProductRedux - ", clientSingleProductRedux);
   const clientIsLogged = useSelector(
     (state) => state.client_auth.loggedData.isUserLogged
   );
@@ -99,25 +99,9 @@ const ProductDetailPage = () => {
     setisLoadingTopProgress(100);
   }
 
-  // useEffect(() => {
-  //   fetchData();
-  //   const handleScroll = () => {
-  //     setScrollTop(document.scrollingElement.scrollTop);
-  //   };
-
-  //   // Set initial scroll position
-  //   setScrollTop(document.scrollingElement.scrollTop);
-
-  //   // Add event listener for scroll
-  //   window.addEventListener("scroll", function () {
-  //     setScrollTop(document.scrollingElement.scrollTop);
-  //   });
-
-  //   // Clean up the event listener on component unmount
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, [location.pathname]);
 
   // console.log("scrollTop - ", scrollTop);
 

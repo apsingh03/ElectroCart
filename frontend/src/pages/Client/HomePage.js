@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useMemo } from "react";
 // import { Link } from "react-router-dom";
 // import { FaLocationDot } from "react-icons/fa6";
 
@@ -87,12 +87,12 @@ const HomePage = () => {
         data?.productCategory?.name === "Tablet" && data?.isFavorite === true
     );
 
-  const client_allProductsRedux__tvs =
-    client_allProductsRedux?.query &&
-    client_allProductsRedux?.query.filter(
-      (data) =>
-        data?.productCategory?.name === "Tv's" && data?.isFavorite === true
-    );
+  // const client_allProductsRedux__tvs =
+  //   client_allProductsRedux?.query &&
+  //   client_allProductsRedux?.query.filter(
+  //     (data) =>
+  //       data?.productCategory?.name === "Tv's" && data?.isFavorite === true
+  //   );
 
   const client_allProductsReduxQuery =
     client_allProductsRedux?.query && client_allProductsRedux?.query;

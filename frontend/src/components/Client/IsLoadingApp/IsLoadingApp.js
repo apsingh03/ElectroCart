@@ -3,7 +3,7 @@ import "./IsLoadingApp.css";
 
 const IsLoadingApp = () => {
   return (
-    <div class="isLoadingApp">
+    <div className="isLoadingApp">
       <span>E</span>
       <span>l</span>
       <span>e</span>

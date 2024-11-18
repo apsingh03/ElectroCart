@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useCallback } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { IoSearch, IoLayersOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { AppContext } from "../../context/AppContext";
@@ -62,6 +62,7 @@ const DebounceSearch = () => {
                   onClick={() => setisActiveDebounceChildContainer(true)}
                   onChange={(e) => setsearchQuery(e.target.value)}
                   value={searchQuery}
+                  style={{ padding: "5px 20px 5px 130px" }}
                 />
                 {isLoadingDebounceSearch && (
                   <span className="header__3rdContainer__debounce__parent__isLoading">

@@ -52,7 +52,7 @@ const SideBarDebounceSearch = ({ setisActiveSideBarDebounce }) => {
           <FaArrowLeft />
         </div>
 
-        <div style={{ position: "relative" }}>
+        <div style={{ position: "relative", overflow: "hidden" }}>
           <div className="header__3rdContainer__debounce__parent">
             <span className="header__3rdContainer__debounce__parent__icons">
               <IoSearch />

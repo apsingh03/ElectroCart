@@ -51,7 +51,15 @@ export const uploadProductImageOnAws = async (selectedFiles) => {
           });
         });
 
-        s3Urls.push(s3response);
+        // Convert S3 URL to CloudFront URL
+        const cloudFrontUrl = s3response.replace(
+          "s3.amazonaws.com",
+          "d1zyyepb3ss1sc.cloudfront.net"
+        );
+
+        // return cloudFrontUrl; // Return CloudFront URL
+
+        s3Urls.push(cloudFrontUrl);
       }
 
       return s3Urls;
@@ -85,7 +93,15 @@ export const uploadImageOnAws = async (fileName) => {
       });
     });
 
-    return s3response;
+    // Convert S3 URL to CloudFront URL
+    const cloudFrontUrl = s3response.replace(
+      "s3.amazonaws.com",
+      "d1zyyepb3ss1sc.cloudfront.net"
+    );
+
+    return cloudFrontUrl; // Return CloudFront URL
+
+    // return s3response;
   } catch (error) {
     console.log(`uploadProductImageOnAws Error ${error}`);
   }

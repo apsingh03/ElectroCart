@@ -11,6 +11,7 @@ const Product = db.product;
 const ProductImages = db.productImages;
 const ProductColors = db.productColors;
 const ProductFabrics = db.productFabrics;
+const ParentCategoryBrand = db.parentCategoryBrand;
 const Color = db.color;
 const Fabric = db.fabric;
 
@@ -49,7 +50,7 @@ const clientDebouncedSearch = async (req, res) => {
       },
       include: [
         {
-          model: Category,
+          model: ParentCategoryBrand,
           as: "productCategory",
           attributes: {
             exclude: ["admin_id", "createdAt", "updatedAt", "isFavorite"],

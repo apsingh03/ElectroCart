@@ -106,7 +106,7 @@ const SubHeader = ({ menuData }) => {
             </div>
           </div>
 
-          <div className="subHeader__two">
+          <div className="subHeader__two ">
             {(function () {
               if (menuIsLoading) {
                 return (
