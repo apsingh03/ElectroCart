@@ -200,10 +200,8 @@ const Footer = () => {
             <div className="footer__1st__links">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
-                width={"150px"}
-                height={"auto"}
                 alt="available on playstore"
-                className="footer__1st__links__playstore"
+                className="footer__1st__links__playstore footer__3rdbox__payments_imgs"
                 loading="lazy"
               />
             </div>
@@ -274,8 +272,7 @@ const Footer = () => {
             <h2 className="footer__3rdbox__title">Payment Options</h2>
             <img
               src="https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/dfbe2f5f-3151-4362-a87d-be59f0981179.webp"
-              width={"100%"}
-              height={"auto"}
+              className="footer__3rdbox__payments_imgs"
               alt="Payment Options"
               loading="lazy"
             />
@@ -285,8 +282,7 @@ const Footer = () => {
             <h2 className="footer__3rdbox__title"> Payment Options</h2>
             <img
               src="https://s3.ap-south-1.amazonaws.com/happimobiles/retool-upload/3cbdd653-e830-4768-b52a-bda047a2a6fa.png"
-              width={"100%"}
-              height={"auto"}
+              className="footer__3rdbox__payments_imgs"
               alt="Payment Options"
               loading="lazy"
             />

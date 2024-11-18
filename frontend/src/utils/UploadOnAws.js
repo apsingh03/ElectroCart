@@ -32,6 +32,11 @@ export const uploadProductImageOnAws = async (selectedFiles) => {
           Key: newFileName,
           Body: file,
           // ACL: "public-read",
+
+          // GMatric -  Serve static assets with an efficient cache policy
+          //  use below lines to get rid of errors
+          // ContentType: file.mimetype,
+          // CacheControl: "max-age=31536000, public", // 1-year cache
         };
 
         const s3response = await new Promise((resolve, reject) => {

@@ -32,11 +32,8 @@
 
 .product-card {
   position: relative;
-  /* width: 250px; */
   background-color: #fff;
-  /* border: 1px solid #ddd; */
   padding: 10px 5px;
-  /* min-height: 500px; */
   border-radius: 5px;
   text-align: center;
   transition: box-shadow 0.3s ease;
@@ -49,19 +46,19 @@
 
 .product-card__image-wrapper {
   position: relative;
-
   overflow: hidden;
   display: block;
-  position: relative;
-  height: 250px;
+  height: 250px; /* Reserve vertical space */
+  width: 100%; /* Matches the parent container */
+  aspect-ratio: 4 / 3; /* Ensure correct image aspect ratio (adjust as needed) */
 }
 
 .product-card__image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
+    width: 100%;
+    height: auto; /* Preserve intrinsic aspect ratio */
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
 }
 
 .product-card__image:hover {

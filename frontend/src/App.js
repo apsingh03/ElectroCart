@@ -7,6 +7,7 @@ import LoadingBar from "react-top-loading-bar";
 import Cart from "./components/Client/Cart";
 import SideBarMenu from "./components/Client/SideBarMenu";
 import SideFilter from "./components/Client/ProductsFilterPage/SideFilter";
+import IsLoadingApp from "./components/Client/IsLoadingApp/IsLoadingApp";
 
 // Lazy load components jhjkhkjkk
 const ProductFilterPage = lazy(() =>
@@ -107,14 +108,7 @@ function App() {
         />
       )}
 
-      <Suspense
-        fallback={
-          <div
-            className="spinner-border spinner-border-sm text-center"
-            role="status"
-          ></div>
-        }
-      >
+      <Suspense fallback={<IsLoadingApp />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
 
@@ -142,8 +136,6 @@ function App() {
           />
         </Routes>
       </Suspense>
-
-      {/* <WhatsAppBtn /> */}
     </>
   );
 }
