@@ -48,17 +48,22 @@
   position: relative;
   overflow: hidden;
   display: block;
-  height: 250px; /* Reserve vertical space */
-  width: 100%; /* Matches the parent container */
-  aspect-ratio: 4 / 3; /* Ensure correct image aspect ratio (adjust as needed) */
+  height: 250px;
+  /* Reserve vertical space */
+  width: 100%;
+  /* Matches the parent container */
+  aspect-ratio: 4 / 3;
+  /* Ensure correct image aspect ratio (adjust as needed) */
 }
 
 .product-card__image {
-    width: 100%;
-    height: auto; /* Preserve intrinsic aspect ratio */
-    object-fit: contain;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
+  /* Preserve intrinsic aspect ratio */
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+  aspect-ratio: 4 / 4;
 }
 
 .product-card__image:hover {
