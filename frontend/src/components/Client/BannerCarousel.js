@@ -230,6 +230,7 @@ const BannerCarousel = React.memo(({ bannerCarouselRedux }) => {
                   height: `${data.height}`,
                   width: `${data.width}`,
                   objectFit: `${data.objectFit}`,
+                  aspectRatio: 4 / 4,
                 }}
                 loading={idx === 0 ? "eager" : "lazy"} // Load the first image eagerly
               />

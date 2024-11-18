@@ -168,6 +168,7 @@ const HomePage = () => {
               bannerCarouselRedux={bannerCarouselRedux && bannerCarouselRedux}
             />
           </section>
+
           <DealsSection />
           <div>
             <CategorySection
@@ -179,8 +180,7 @@ const HomePage = () => {
               categoryRelatedImageObjectFit="cover"
               categoryRelatedImageAlt="Tablet Banner"
             />
-            {/* "../../../public/images/laptopBanner.webp"
-            "../../../public/images/mobileBanner.webp" */}
+
             <CategorySection
               title="Latest Tablet"
               products={client_allProductsRedux__tablet}
