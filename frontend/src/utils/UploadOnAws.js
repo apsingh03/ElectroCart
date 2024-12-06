@@ -58,8 +58,10 @@ export const uploadProductImageOnAws = async (selectedFiles) => {
         );
 
         // return cloudFrontUrl; // Return CloudFront URL
+        let modifiedUrl =
+          "https://" + cloudFrontUrl.split(".").slice(1).join(".");
 
-        s3Urls.push(cloudFrontUrl);
+        s3Urls.push(modifiedUrl);
       }
 
       return s3Urls;
@@ -87,7 +89,7 @@ export const uploadImageOnAws = async (fileName) => {
           console.log(`Something went wrong -- \n`, err);
           reject(err);
         } else {
-          //   console.log("Image URL - ", s3response.Location);
+          console.log("Image URL - ", s3response);
           resolve(s3response.Location);
         }
       });
@@ -99,7 +101,9 @@ export const uploadImageOnAws = async (fileName) => {
       "d12del54ju2eas.cloudfront.net"
     );
 
-    return cloudFrontUrl; // Return CloudFront URL
+    let modifiedUrl = "https://" + cloudFrontUrl.split(".").slice(1).join(".");
+
+    return modifiedUrl; // Return CloudFront URL
 
     // return s3response;
   } catch (error) {
