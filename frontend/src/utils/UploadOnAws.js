@@ -29,7 +29,7 @@ export const uploadProductImageOnAws = async (selectedFiles) => {
 
         const params = {
           Bucket: BUCKET_NAME,
-          Key: newFileName,
+          Key: `electrocart/${newFileName}`,
           Body: file,
           // ACL: "public-read",
 
@@ -45,7 +45,7 @@ export const uploadProductImageOnAws = async (selectedFiles) => {
               console.log(`Something went wrong -- \n`, err);
               reject(err);
             } else {
-              //   console.log("Image URL - ", s3response.Location);
+              // console.log("Image URL - ", s3response.Location);
               resolve(s3response.Location);
             }
           });
@@ -54,7 +54,7 @@ export const uploadProductImageOnAws = async (selectedFiles) => {
         // Convert S3 URL to CloudFront URL
         const cloudFrontUrl = s3response.replace(
           "s3.amazonaws.com",
-          "d1zyyepb3ss1sc.cloudfront.net"
+          "d12del54ju2eas.cloudfront.net"
         );
 
         // return cloudFrontUrl; // Return CloudFront URL
@@ -76,7 +76,7 @@ export const uploadImageOnAws = async (fileName) => {
 
     const params = {
       Bucket: BUCKET_NAME,
-      Key: newFileName,
+      Key: `electrocart/${newFileName}`,
       Body: fileName,
       // ACL: "public-read",
     };
@@ -96,7 +96,7 @@ export const uploadImageOnAws = async (fileName) => {
     // Convert S3 URL to CloudFront URL
     const cloudFrontUrl = s3response.replace(
       "s3.amazonaws.com",
-      "d1zyyepb3ss1sc.cloudfront.net"
+      "d12del54ju2eas.cloudfront.net"
     );
 
     return cloudFrontUrl; // Return CloudFront URL
