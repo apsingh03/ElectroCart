@@ -45,6 +45,11 @@ db.parentMenu = require("./admin/Menu/ParentMenuModel.js")(
   sequelize,
   DataTypes
 );
+
+db.menuNestedSubMenu = require("./admin/Menu/MenuNestedSubMenu.js")(
+  sequelize,
+  DataTypes
+);
 db.childCategoryBrand =
   require("./admin/CategoryBrand/ChildCategoryBrandModel.js")(
     sequelize,

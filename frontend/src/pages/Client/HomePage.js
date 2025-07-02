@@ -20,6 +20,7 @@ import BrandCategorySearch from "../../components/Client/HomePage/BrandCategoryS
 import FooterServiceOffering from "../../components/Client/FooterServiceOffering";
 import WhatsAppBtn from "../../components/WhatsAppBtn/WhatsAppBtn";
 import SubHeader from "../../components/Client/SubHeader/SubHeader";
+import { getMenuNestedSubMenuAsync } from "../../Redux/AdminSlices/Menu/menuNestedSubMenu";
 
 const Header = React.lazy(() => import("../../components/Client/Header"));
 const Footer = React.lazy(() => import("../../components/Client/Footer"));
@@ -73,19 +74,21 @@ const HomePage = () => {
     (state) => state.client_product.allProducts
   );
 
-  const client_allProductsRedux__mobiles =
-    client_allProductsRedux?.query &&
-    client_allProductsRedux?.query.filter(
+  // Mobile
+  const client_allProductsRedux__mobiles = useMemo(() => {
+    return client_allProductsRedux?.query?.filter(
       (data) =>
         data?.productCategory?.name === "Mobile" && data?.isFavorite === true
     );
+  }, [client_allProductsRedux?.query]);
 
-  const client_allProductsRedux__tablet =
-    client_allProductsRedux?.query &&
-    client_allProductsRedux?.query.filter(
+  // Tablet
+  const client_allProductsRedux__tablet = useMemo(() => {
+    return client_allProductsRedux?.query?.filter(
       (data) =>
         data?.productCategory?.name === "Tablet" && data?.isFavorite === true
     );
+  }, [client_allProductsRedux?.query]);
 
   // const client_allProductsRedux__tvs =
   //   client_allProductsRedux?.query &&
@@ -100,6 +103,10 @@ const HomePage = () => {
   const isLoadingClient_allProductsRedux =
     !client_allProductsReduxQuery || !client_allProductsReduxQuery;
 
+  const admin_menuNestedSubMenuRedux = useSelector(
+    (state) => state.admin_menuNestedSubMenu.data?.query
+  );
+
   // console.log("client_allProductsRedux - ", client_allProductsRedux);
 
   // console.log("actressCarouselRedux - ", actressCarouselRedux);
@@ -112,6 +119,8 @@ const HomePage = () => {
     setisLoadingTopProgress(30);
     await dispatch(clientGetMenuAsync());
     await dispatch(clientGetBannerCarouselAsync());
+    await dispatch(getMenuNestedSubMenuAsync());
+
     // await dispatch(clientGetActressCarouselAsync());
     // await dispatch(clientGetFourBannerImagesAsync());
     // await dispatch(clientGetCategoryWiseProductAsync());
@@ -146,6 +155,9 @@ const HomePage = () => {
           <SubHeader
             menuData={
               client_headerMenuRedux?.query && client_headerMenuRedux?.query
+            }
+            menuNestedSubMenu={
+              admin_menuNestedSubMenuRedux && admin_menuNestedSubMenuRedux
             }
           />
 

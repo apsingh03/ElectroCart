@@ -26,6 +26,7 @@ import favoriteProductSlice from "./UserSlices/FavoriteProduct/FavoriteProductSl
 import clientDebounceSearchSlice from "./ClientSlices/clientDebounceSearchSlice";
 import parentCategoryBrandSlice from "./AdminSlices/CategoryBrand/parentCategoryBrandSlice";
 import childCategoryBrandSlice from "./AdminSlices/CategoryBrand/childCategoryBrandSlice";
+import menuNestedSubMenuSlice from "./AdminSlices/Menu/menuNestedSubMenu";
 
 export const store = configureStore({
   reducer: {
@@ -35,6 +36,7 @@ export const store = configureStore({
     admin_childFilter: childFilterSlice,
     admin_parentMenu: parentMenuSlice,
     admin_childMenu: childMenuSlice,
+    admin_menuNestedSubMenu: menuNestedSubMenuSlice,
     admin_productSize: productSizeSlice,
     admin_category: categorySlice,
     admin_color: colorSlice,

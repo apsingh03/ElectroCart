@@ -33,6 +33,8 @@ import ChildTestimonial from "../../components/Admin/Testimonial/ChildTestimonia
 import FourImagesBanner from "../../components/Admin/FourImagesBanner/FourImagesBanner";
 import ParentCategoryBrand from "../../components/Admin/CategoryBrand/ParentCategoryBrand";
 import ChildCategoryBrand from "../../components/Admin/CategoryBrand/ChildCategoryBrand";
+import MenuNestedSubMenu from "../../components/Admin/Menu/RecursiveTree/MenuNestedSubMenu";
+// import MenuNestedSubMenu from "";.
 
 const AdminJunction = () => {
   const adminAuth = useSelector((state) => state.admin_auth.loggedData);
@@ -74,6 +76,7 @@ const AdminJunction = () => {
       category: "Product Menu",
       title: "Menu ",
       subMenu: [
+        { name: "Nested Menu SubMenu", url: "menuNestedSubMenu" },
         { name: "Create Parent", url: "parentMenu" },
         { name: "Create Child", url: "childMenu" },
       ],
@@ -295,6 +298,11 @@ const AdminJunction = () => {
               <Route path="/childFilter" element={<ChildFilter />} />
 
               {/* Menu */}
+
+              <Route
+                path="/menuNestedSubMenu"
+                element={<MenuNestedSubMenu />}
+              />
               <Route path="/parentMenu" element={<ParentMenu />} />
               <Route path="/childMenu" element={<ChildMenu />} />
 

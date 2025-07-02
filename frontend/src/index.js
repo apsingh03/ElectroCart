@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 // // Skelton UI
 import "react-loading-skeleton/dist/skeleton.css";
 import App from "./App";
+import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,6 +21,7 @@ import { AppProvider } from "./context/AppContext";
 import { store } from "./Redux/Store";
 import { Provider } from "react-redux";
 import { SocketProvider } from "./context/SocketContext";
+import ErrorBoundary from "./utils/ErrorBoundary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,7 +30,9 @@ root.render(
       <AppProvider>
         <SocketProvider>
           <Provider store={store}>
-            <App />
+            <ErrorBoundary>
+              <App />
+            </ErrorBoundary>
           </Provider>
         </SocketProvider>
       </AppProvider>
