@@ -1,4 +1,4 @@
-function buildTree(list, parentId = null) {
+export const buildTree = (list, parentId = null) => {
   try {
     return (
       list &&
@@ -16,8 +16,4 @@ function buildTree(list, parentId = null) {
   } catch (error) {
     console.error("Error at building Tree", error);
   }
-}
-
-module.exports = {
-  buildTree,
 };
