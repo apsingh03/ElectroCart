@@ -16,5 +16,6 @@ router.get("/bannerCarousel", controller.clientGetBannerCarousel);
 router.get("/actressCarousel", controller.clientGetActressCarousel);
 router.get("/testimonial", controller.clientGetTestimonial);
 router.get("/fourBannerImages", controller.clientGetFourBannerImages);
+router.get("/menuNestedSubMenu", controller.clientGetMenuNestedSubMenu);
 
 module.exports = router;

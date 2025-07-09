@@ -28,6 +28,7 @@ const TestimonialDetails = db.testimonialDetails;
 const FourImagesBanner = db.fourImagesBanner;
 const ParentCategoryBrand = db.parentCategoryBrand;
 const ChildCategoryBrand = db.childCategoryBrand;
+const MenuNestedSubMenu = db.menuNestedSubMenu;
 
 const clientGetCategoryWiseProduct = async (req, res) => {
   try {
@@ -109,6 +110,18 @@ const clientGetCategoryWiseProduct = async (req, res) => {
         },
       ],
       order: [["id", "ASC"]],
+    });
+
+    return res.status(200).send({ msg: "success", query });
+  } catch (error) {
+    return res.status(500).send({ error: error.message });
+  }
+};
+
+const clientGetMenuNestedSubMenu = async (req, res) => {
+  try {
+    const query = await MenuNestedSubMenu.findAll({
+      order: [["id", "Asc"]],
     });
 
     return res.status(200).send({ msg: "success", query });
@@ -399,7 +412,6 @@ const clientShowFilteredProducts = async (req, res) => {
           "updatedAt",
           "productImages_id",
           // "category_id",
-       
         ],
       },
       include,
@@ -673,4 +685,5 @@ module.exports = {
   clientGetActressCarousel,
   clientGetTestimonial,
   clientGetFourBannerImages,
+  clientGetMenuNestedSubMenu,
 };

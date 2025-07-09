@@ -11,16 +11,18 @@ import {
   // clientGetCategoryWiseProductAsync,
   // clientGetFourBannerImagesAsync,
   clientGetMenuAsync,
+  clientGetTestimonialAsync,
   // clientGetTestimonialAsync,
   clientShowFilteredProductsAsync,
+  clientmenuNestedSubMenuAsync,
 } from "../../Redux/ClientSlices/clientProductSlice";
+
 import DealsSection from "../../components/Client/DealsSection";
 import CategorySection from "../../components/Client/HomePage/CategorySection";
 import BrandCategorySearch from "../../components/Client/HomePage/BrandCategorySearch";
 import FooterServiceOffering from "../../components/Client/FooterServiceOffering";
 import WhatsAppBtn from "../../components/WhatsAppBtn/WhatsAppBtn";
 import SubHeader from "../../components/Client/SubHeader/SubHeader";
-import { getMenuNestedSubMenuAsync } from "../../Redux/AdminSlices/Menu/menuNestedSubMenu";
 
 const Header = React.lazy(() => import("../../components/Client/Header"));
 const Footer = React.lazy(() => import("../../components/Client/Footer"));
@@ -104,10 +106,10 @@ const HomePage = () => {
     !client_allProductsReduxQuery || !client_allProductsReduxQuery;
 
   const admin_menuNestedSubMenuRedux = useSelector(
-    (state) => state.admin_menuNestedSubMenu.data?.query
+    (state) => state.client_product?.menuNestedSubMenu?.query
   );
 
-  // console.log("client_allProductsRedux - ", client_allProductsRedux);
+  // console.log("admin_menuNestedSubMenuRedux - ", admin_menuNestedSubMenuRedux);
 
   // console.log("actressCarouselRedux - ", actressCarouselRedux);
 
@@ -119,7 +121,9 @@ const HomePage = () => {
     setisLoadingTopProgress(30);
     await dispatch(clientGetMenuAsync());
     await dispatch(clientGetBannerCarouselAsync());
-    await dispatch(getMenuNestedSubMenuAsync());
+    // await dispatch(getMenuNestedSubMenuAsync());
+    await dispatch(clientGetTestimonialAsync());
+    await dispatch(clientmenuNestedSubMenuAsync());
 
     // await dispatch(clientGetActressCarouselAsync());
     // await dispatch(clientGetFourBannerImagesAsync());

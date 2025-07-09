@@ -17,6 +17,21 @@ export const clientGetCategoryWiseProductAsync = createAsyncThunk(
   }
 );
 
+export const clientmenuNestedSubMenuAsync = createAsyncThunk(
+  "client/clientmenuNestedSubMenuAsync",
+  async () => {
+    try {
+      const response = await axios.get(
+        `${HOSTNAME}/client/product/menuNestedSubMenu/`
+      );
+
+      return response.data;
+    } catch (error) {
+      console.log("clientmenuNestedSubMenuAsync Error - ", error.response);
+    }
+  }
+);
+
 export const clientAllListedProductsAsync = createAsyncThunk(
   "client/clientAllListedProducts",
   async () => {
@@ -169,6 +184,7 @@ const initialState = {
   actressCarousel: [],
   testimonial: [],
   fourBannerImages: [],
+  menuNestedSubMenu: [],
   isLoading: false,
   isError: false,
 };
@@ -249,7 +265,17 @@ export const clientProductSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
       })
-
+      .addCase(clientmenuNestedSubMenuAsync.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(clientmenuNestedSubMenuAsync.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.menuNestedSubMenu = action.payload;
+      })
+      .addCase(clientmenuNestedSubMenuAsync.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+      })
       .addCase(clientAllListedProductsAsync.pending, (state, action) => {
         state.isLoading = true;
       })
